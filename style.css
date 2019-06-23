@@ -1,0 +1,86 @@
+:root {
+  --text: slategray;
+  --bg: #1a181d;
+  --bg2: #24212a;
+  --link: cornflowerblue;
+  --linkhov: royalblue;
+}
+
+li img,
+.list-group-item img {
+  height: 1.25em;
+}
+
+h img{
+  height: 1em;
+}
+
+html {
+  padding-bottom: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--linkhov);
+  text-decoration: none;
+}
+
+.container{
+  max-width: 1050px;
+}
+
+body {
+  overflow: none;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.main li,
+ul.spread-list li {
+  line-height: 32px;
+}
+
+.side {
+  background: var(--bg2);
+}
+
+.side a,
+.files a {
+  color: maroon;
+}
+
+.side a:hover,
+.files a:hover {
+  color: magenta;
+}
+
+.side ul li,
+.side .card,
+.side .list-group .list-group-item {
+  max-width: 16rem;
+  font-size: 20px;
+  background: var(--bg2);
+}
+
+.files .list-group-item {
+  background:  var(--bg2);
+}
+
+.list-group-item-action:hover {
+  filter: brightness(85%);
+}
+
+h1 {
+  color: var(--text);
+  filter: brightness(50%);
+  font-weight: normal;
+}
+
+h2,h3 {
+  color: darkred;
+  font-weight: normal;
+}
