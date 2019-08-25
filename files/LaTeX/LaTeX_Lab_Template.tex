@@ -1,7 +1,11 @@
+% Disclaimer: This document was modified from the form in which I received it in order to maximize its utility to lab report writers
 
-\documentclass[oneside,letterpaper]{article}   	% <-- Could change the font size up here
-\usepackage[margin=1.0in]{geometry}             	% Packages and things to be imported that may be used
-													% Later on in tables, figures, etc.
+\documentclass[11pt,oneside,letterpaper]{article} % <-- Could change the font size up here
+\usepackage[margin=1.0in]{geometry}               % Packages and things to be imported that may be used
+\usepackage[utf8]{inputenc}             	      % Later on in tables, figures, etc.
+
+\usepackage{color}
+\usepackage[colorlinks, linktocpage, linktoc=section, urlcolor=blue, linkcolor=blue, citecolor=red]{hyperref}
 
 \usepackage{graphicx}				
 
@@ -12,68 +16,85 @@
 \usepackage{subfigure}
 
 
+\usepackage{appendix}
+
+
 \newcommand{\UR}{University of Rochester}	% Custom commands
 
 
-\title{Physics Lab Report Template}
+\title{Lab Report Template}
 \author{\underline{Your Name} \and Partner Name}
-\date{\today}					
+\date{\today}
 
 \begin{document} % Starts the Document 
 \maketitle
 
 
 \abstract % Latex has its own abstract heading!
-Abstract section where you discuss what you found, if you wish to type a math equation inside text, use dollar signs on either side of your equation: $g = 9.81m/s^2$
-
+Abstract section. Briefly outline what the report covers and state results if applicable.
+To typeset math inline with text, use dollar signs on either side of your equation: $g = 9.81m/s^2$
 
 
 
 \section{Theory}
-Theory section
+Define sections and subsections to organize your report.
+
 
 \subsection{Part 1}
-Some specific part of the theory behind the experiment.
+You can add figures with descriptive captions and refer back to them later:
 \newline % Go to the next line
-% The next commented section gives the layout to make a figure at the location in the document where it is typed
 
-% \begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.7\columnwidth]{Folder/diagramname.jpg}
-%    \caption{This is what figure 1 is}
-%    \label{Figure 1}
-% \end{figure}
-\par Might use equations to to describe something, like % \par does paragraph indentation
-\begin{equation} \vec{L} = I \vec{\omega} \end{equation}
+
+\begin{figure}[H] % The [H] tells LaTeX to put your figure right were you want it.
+   \centering
+   \includegraphics[width=0.7\columnwidth]{Figures/Solvay_conference_1927.jpg} % This .tex document is in the same root directory as the folder
+   \caption{The 5\textsuperscript{th} Solvay conference, 1927}
+   \label{fig:solvay} % label for later reference
+\end{figure}
+
+
+\par Numbered equations can be constructed as % \par does paragraph indentation
+\begin{equation}
+	\vec{L} = I \vec{\omega} \label{eq:angMomentum} % Label figures and equations to dynamically refer back to them later. You can also label and refer to document sections.
+\end{equation}
 
 
 \section{Experiment}
-Experiment section
+You can use \verb|\autoref| to refer back to \autoref{fig:solvay} or \autoref{eq:angMomentum}.
 
 
 
 \section{Data Analysis}
 Might want a table to present data:
 
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|}
 	\hline
-	Trial & 1 & 2  \\ \hline
-	$\theta_1$ & 1 & 2 \\ \hline
-	$\theta_2$ & 1 & 2 \\ \hline
+	Trial & $\theta_1$ & $\theta_2$  \\ \hline
+	1 & 1 & 2 \\ \hline
+	2 & 1 & 2 \\ \hline
 	\end{tabular}
 	\caption{caption about table 1}
-	\label{Table 1}
+	\label{tbl:data}
 \end{table}
 
+I highly recommend using \href{http://www.tablesgenerator.com/latex_tables}{the {\LaTeX} table generator} to format your {\LaTeX} tables.
+\newline
+
 Of course, error propagation will be in here:
-\begin{equation}  \sigma = \sqrt{\left(\frac{\partial}{\partial x}\right)^2\sigma _x^2+\left(\frac{\partial}{\partial y}\right)^2\sigma _y^2 + \left(\frac{\partial}{\partial z}\right)^2\sigma _z^2...} \end{equation}
+\begin{equation}
+    \sigma = \sqrt{\left(\frac{\partial}{\partial x}\right)^2\sigma _x^2+\left(\frac{\partial}{\partial y}\right)^2\sigma _y^2 + \left(\frac{\partial}{\partial z}\right)^2\sigma _z^2\cdots} 
+\end{equation}
 
 Maybe some weighted mean:
-\begin{equation} w_i = \frac{1}{\sigma_i^2}  \end{equation}
-\begin{equation} x_{mean} = \frac{\sum\limits_{i=1}^N{w_ix_i}}{\sum\limits_{i=1}^N{w_i}} \end{equation}
-\begin{equation} \sigma_{mean} = \frac{1}{\sqrt{\sum\limits_{i=1}^N{w_i}}} \end{equation}
+\begin{align*} % Align equations in an align environment with the & character. A * after then environment name removes the equation numbers.
+    w_i &= \frac{1}{\sigma_i^2}\\
+    x_{\text{mean}} &= \frac{\sum\limits_{i=1}^N{w_ix_i}}{\sum\limits_{i=1}^N{w_i}}\\
+    \sigma_{\text{mean}} &= \frac{1}{\sqrt{\sum\limits_{i=1}^N{w_i}}}
+\end{align*}
+
 
 
 \section{Conclusion}
@@ -83,7 +104,6 @@ Summary
 
 \section{Remarks}
 remarks
-
 
 
 
