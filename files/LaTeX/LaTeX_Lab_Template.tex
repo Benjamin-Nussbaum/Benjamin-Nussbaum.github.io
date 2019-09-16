@@ -2,7 +2,7 @@
 
 \documentclass[11pt,oneside,letterpaper]{article} % <-- Could change the font size up here
 \usepackage[margin=1.0in]{geometry}               % Packages and things to be imported that may be used
-\usepackage[utf8]{inputenc}             	      % Later on in tables, figures, etc.
+\usepackage[utf8]{inputenc}             	      % later on in tables, figures, etc.
 
 \usepackage{color}
 \usepackage[colorlinks, linktocpage, linktoc=section, urlcolor=blue, linkcolor=blue, citecolor=red]{hyperref}
@@ -26,13 +26,14 @@
 \author{\underline{Your Name} \and Partner Name}
 \date{\today}
 
-\begin{document} % Starts the Document 
-\maketitle
+\begin{document} % Starts the Document. Everything before this point is called the preamble.
+\maketitle % Makes the title, filling in information specified above.
 
 
-\abstract % Latex has its own abstract heading!
+\begin{abstract} % Latex has its own abstract heading!
 Abstract section. Briefly outline what the report covers and state results if applicable.
 To typeset math inline with text, use dollar signs on either side of your equation: $g = 9.81m/s^2$
+\end{abstract} 
 
 
 
@@ -42,12 +43,11 @@ Define sections and subsections to organize your report.
 
 \subsection{Part 1}
 You can add figures with descriptive captions and refer back to them later:
-\newline % Go to the next line
 
 
 \begin{figure}[H] % The [H] tells LaTeX to put your figure right were you want it.
    \centering
-   \includegraphics[width=0.7\columnwidth]{Figures/Solvay_conference_1927.jpg} % This .tex document is in the same root directory as the folder
+   \includegraphics[width=0.7\columnwidth]{Figures/Solvay_conference_1927.jpg} % This .tex document is in the same root directory as the Figures folder
    \caption{The 5\textsuperscript{th} Solvay conference, 1927}
    \label{fig:solvay} % label for later reference
 \end{figure}
@@ -60,7 +60,7 @@ You can add figures with descriptive captions and refer back to them later:
 
 
 \section{Experiment}
-You can use \verb|\autoref| to refer back to \autoref{fig:solvay} or \autoref{eq:angMomentum}.
+You can use \verb|\autoref| to refer back to \autoref{fig:solvay} or \autoref{eq:angMomentum} automatically.
 
 
 
@@ -68,24 +68,24 @@ You can use \verb|\autoref| to refer back to \autoref{fig:solvay} or \autoref{eq
 Might want a table to present data:
 
 
-\begin{table}[H]
+\begin{table}[H] % Adding the "[H]" tells LaTeX to put your figure/table HERE (it will put the them where it thinks they fit best otherwise)
 \centering
 \begin{tabular}{|c|c|c|}
 	\hline
 	Trial & $\theta_1$ & $\theta_2$  \\ \hline
 	1 & 1 & 2 \\ \hline
-	2 & 1 & 2 \\ \hline
+	2 & 3 & 4 \\ \hline
 	\end{tabular}
-	\caption{caption about table 1}
+	\caption{A good table with useful data}
 	\label{tbl:data}
 \end{table}
 
 I highly recommend using \href{http://www.tablesgenerator.com/latex_tables}{the {\LaTeX} table generator} to format your {\LaTeX} tables.
-\newline
+
 
 Of course, error propagation will be in here:
 \begin{equation}
-    \sigma = \sqrt{\left(\frac{\partial}{\partial x}\right)^2\sigma _x^2+\left(\frac{\partial}{\partial y}\right)^2\sigma _y^2 + \left(\frac{\partial}{\partial z}\right)^2\sigma _z^2\cdots} 
+    \sigma = \sqrt{\left(\frac{\partial}{\partial x}\right)^2\sigma_x^2+\left(\frac{\partial}{\partial y}\right)^2\sigma_y^2 + \left(\frac{\partial}{\partial z}\right)^2\sigma_z^2\cdots} 
 \end{equation}
 
 Maybe some weighted mean:
